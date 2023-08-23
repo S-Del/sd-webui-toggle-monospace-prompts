@@ -20,7 +20,7 @@ onUiLoaded(() => {
    */
   const toggleStyleElement = (tabName, id) => {
     /** @type { HTMLStyleElement | null } */
-    const exists = document.head.querySelector<HTMLStyleElement>(`#${id}`);
+    const exists = document.head.querySelector(`#${id}`);
     if (exists) {
       exists.remove();
       return;
