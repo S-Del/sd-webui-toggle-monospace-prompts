@@ -8,10 +8,10 @@ onUiLoaded(() => {
     const style = document.createElement('style');
     style.id = id;
     style.textContent = [
-      `#${tabName}_prompt textarea, `,
-      `#${tabName}_neg_prompt textarea `,
+      `#${tabName}_prompt > label > textarea,`,
+      `#${tabName}_neg_prompt > label > textarea`,
       `{ font-family: monospace; }`
-    ].join('');
+    ].join(' ');
     document.head.appendChild(style);
   };
 
@@ -20,7 +20,7 @@ onUiLoaded(() => {
    */
   const toggleStyleElement = (tabName, id) => {
     /** @type { HTMLStyleElement | null } */
-    const exists = document.head.querySelector<HTMLStyleElement>(`#${id}`);
+    const exists = document.head.querySelector(`#${id}`);
     if (exists) {
       exists.remove();
       return;
